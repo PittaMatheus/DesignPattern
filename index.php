@@ -1,7 +1,9 @@
 <?php
     require 'Imposto.php';
+    require 'Item.php';
     require 'Orcamento.php';
     require 'CalculadoraImpostos.php';
+    require 'CalculadoraDescontos.php';
     require 'ICMS.php';
     require 'ISS.php';
 
@@ -9,8 +11,17 @@
     $reforma = new Orcamento(500);
     $calculadora = new CalculadoraImpostos();
 
-    echo $calculadora->calcula($reforma, new ICMS());
+    echo "<br>" . "Calculos dos impostos: ";
     echo "<br>";
-    echo $calculadora->calcula($reforma, new ISS());
-    
+    echo "ICMS: " . $calculadora->calcula($reforma, new ICMS());
+    echo "<br>";
+    echo "ISS: " . $calculadora->calcula($reforma, new ISS());
+    echo "<br><hr>";
+    echo "Testes de descontos: ";
+    $calculadoraDescontos = new CalculadoraDescontos();
+    echo "Desconto: ";
+    $reforma->addItem(new Item("Tijolo", 250));
+    $reforma->addItem(new Item("Cimento 1kg", 250));
+
+    echo $calculadoraDescontos->desconto($reforma);
 ?>
