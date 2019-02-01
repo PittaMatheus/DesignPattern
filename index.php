@@ -1,5 +1,10 @@
 <?php
     require 'Imposto.php';
+    require 'Desconto.php';
+    require 'Desconto5Itens.php';
+    require 'Desconto500Reais.php';
+    require 'Desconto300Reais.php';
+    require 'SemDesconto.php';
     require 'Item.php';
     require 'Orcamento.php';
     require 'CalculadoraImpostos.php';
@@ -8,7 +13,7 @@
     require 'ISS.php';
 
     // UTILIZANDO O STRATEGY PARA CALCULAR O VALOR DO IMPOSTO
-    $reforma = new Orcamento(500);
+    $reforma = new Orcamento(301);
     $calculadora = new CalculadoraImpostos();
 
     echo "<br>" . "Calculos dos impostos: ";
@@ -22,6 +27,12 @@
     echo "Desconto: ";
     $reforma->addItem(new Item("Tijolo", 250));
     $reforma->addItem(new Item("Cimento 1kg", 250));
+    $reforma->addItem(new Item("Cimento 1kg", 250));
+    $reforma->addItem(new Item("Cimento 1kg", 250));
+
+
+
+
 
     echo $calculadoraDescontos->desconto($reforma);
 ?>
