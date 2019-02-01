@@ -1,5 +1,6 @@
 <?php
     require 'Imposto.php';
+    require 'TemplateImpostoCondicional.php';
     require 'Desconto.php';
     require 'Desconto5Itens.php';
     require 'Desconto500Reais.php';
@@ -13,7 +14,7 @@
     require 'ISS.php';
 
     // UTILIZANDO O STRATEGY PARA CALCULAR O VALOR DO IMPOSTO
-    $reforma = new Orcamento(301);
+    $reforma = new Orcamento(490);
     $calculadora = new CalculadoraImpostos();
 
     echo "<br>" . "Calculos dos impostos: ";
