@@ -19,7 +19,7 @@
 
     echo "<br>" . "Calculos dos impostos: ";
     echo "<br>";
-    echo "ICMS: " . $calculadora->calcula($reforma, new ICMS());
+    echo "ICMS: " . $calculadora->calcula($reforma, new ICMS(new ISS));
     echo "<br>";
     echo "ISS: " . $calculadora->calcula($reforma, new ISS());
     echo "<br><hr>";
